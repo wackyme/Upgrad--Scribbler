@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ScriBBler</title>
+
+    <!-- CSS file for all headers -->
+    <link href='css\header.css' rel='stylesheet' type='text/css'>
+
+    <!-- CSS file for all the elements -->
+    <link href='css\index.css' rel='stylesheet' type='text/css'>
+
+    <!-- CSS file for fonts -->
+    <link href='css\font.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div id="main-container-div">
+        <!-- Signup, Signin button also code for "ScriBBler" heading and the sub-heading -->
+        <div class="header">
+            <div class="title-container">
+                <p class="title">ScriBBler</p>
+                <p class="sub-title">Explore, Imagine, Create</p>
+            </div>
+            <div class="login-buttons-container">
+                <button onclick="showSignInScreen()" class="blue-button" type="button">Sign In</button>
+                <button onclick="showSignUpScreen()" class="blue-button" type="button">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="postButtons">
+            <!-- All Posts & Create Post button  -->
+            <button onclick="navigateToBlogList()" class="yellow-button" type="button">All posts</button>
+            <button onclick="showCreatePost()" class="yellow-button" type="button">Create post</button>
+        </div>
+
+    </div>
+
+    <div>
+        <!-- Signin screen code -->
+        <div class="screen" id="signin-screen">
+            <div class="screen-content">
+
+                <div class="screen-head">
+                    <span onclick="hideSignInScreen()" id="close" class="close">&times;</span>
+                    <h2 class="screen-title">Welcome Back!</h2>
+                </div>
+                <hr>
+                <form>
+                    <label for="username" class="label-text">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                    <label for="password" class="label-text">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <button type="submit" onclick="signin(username, password)" class="signin-btn">Sign In</button>
+                </form>
+
+                <p class=bottom-banner>Not a member?<span onclick="hideSignInScreen();showSignUpScreen()" class=signup>Sign Up</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Signup screen code -->
+    <div>
+        <div class="screen" id="signup-screen">
+            <div class="screen-content">
+
+                <div class="screen-head">
+                    <span onclick="hideSignUpScreen()" id="close" class="close">&times;</span>
+                    <h2 class="screen-title">Get Started</h2>
+                </div>
+                <hr>
+                <form>
+                    <label for="fullname" class="label-text">Full name</label>
+                    <input type="text" id="fullname" placeholder="Enter Full Name" required>
+                    <label for="username" class="label-text">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                    <label for="password" class="label-text">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <label for="confirmpassword" class="label-text">Confirm Password</label>
+                    <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+                    <button type="submit" onclick="signup(firstName,lastName, email, password, mobile)" class="signin-btn">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Create Post screen code -->
+        <div class="screen" id="create-post-screen">
+
+            <div class="post-screen-content">
+
+                <div class="screen-head">
+                    <span onclick="hideCreatePostScreen()" id="close" class="close">&times;</span>
+                    <h2 class="screen-title">Pen your post</h2>
+                </div>
+                <form id=create-post-form>
+                    <label for="tile" class="label-text">Title</label>
+                    <input type="text" id="title" placeholder="" required>
+                    <label for="content" class="label-text">Content</label>
+                    <textarea cols="50" rows="15" name="post-details" form="create-post-form"></textarea>
+                    <button type="submit" onclick="createPost()" class="create-btn">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript file for header-->
+    <script src="js\header.js"></script>
+    <!-- Javascript file for all the elements -->
+    <script src="js\index.js"></script>
+
+</body>
+
+</html>
